@@ -1,76 +1,74 @@
-# Tobrie
-Le magnifique bot de l'asso Eirbot, actuellement déployé sur 4 plateformes:
-+ Telegram: @eir_bot
-+ Discord: https://discord.com/api/oauth2/authorize?client_id=693578928777854986&permissions=3197504&scope=bot
-+ Mail: brenda.tobrie@gmail.com
-+ Twitter: @BrendaTobrie
+<br />
+<p align="center">
+  <a href="https://github.com/dubicube/tobrie">
+    <img src="images/logo.png" alt="Logo" width="150" height="150">
+  </a>
 
-Déploiements futurs potentiels (non garanti lol):
-+ Application mobile (en cours de développement)
-+ Messenger
-+ Youtube (live 24h/24)
+  <h3 align="center">Tobrie</h3>
 
-Ce bot a avant tout été développé autour de l'API Telegram. Il a ensuite été remodelé dans une forme relativement adaptative pour supporter facilement l'ajout de nouvelles API pour le déploiement sur d'autres plateformes. Certaines fonctionnalités ne peuvent cependant pas être déployées sur toutes les plateformes, .
+  <p align="center">
+    The amazing bot of robotic association Eirbot.
+  </p>
+</p>
 
-## Les fonctionnalités
-### Réponses automatiques
-Dans un chat, lorsqu'une personne écrit un mot contenant "di", le bot répête la fin du mot après "di". De même avec "cri", sauf que le texte renvoyé par le bot est en majuscules. Ce comportement est récursif, avec tout de même une limite fixe de profondeur de récursivité.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table Of Content</h2></summary>
+  <ol>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#in-chat-usage">In-Chat Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-Lorsqu'une phrase finit par "?", il y a une certaine probabilité que le bot réponde par une vidéo "oui" ou "non".
+## Getting Started
 
-Une matrice de messages associés à des pseudos et des probabilités permet d'envoyer un message lorsqu'un certaine personne parle, avec une certaine probabilité.
+To get a local copy up and running follow these simple steps.
 
-Les fonctionnalités précédentes peuvent être désactivées par la commande /di.
+### Installation
 
-...
+1. Clone the repo
+   ```sh
+   git clone https://github.com/dubicube/tobrie.git
+   ```
+2. Create a virtual environnement
+   ```sh
+   virtualenv venv
+   ```
+3. Activate the virtual environnement
+   ```sh
+   source venv/bin/activate
+   ```
+4. Install python packages
+   ```sh
+   pip install -r requirements.txt
+   ```
+5. You can start the bot now
+   ```sh
+   python src/main.py
+   ```
 
-WIP
+## Features
 
-### Recherche de vidéos
+This bot integrates with:
 
-...
+- Telegram: @eir_bot
+- Discord: https://discord.com/api/oauth2/authorize?client_id=693578928777854986&permissions=3197504&scope=bot
+- Mail: brenda.tobrie@gmail.com
+- Twitter: @BrendaTobrie
 
-WIP
+### In-Chat Usage
 
-### Renvoi de contenu aléatoire
-La commande /meme renvoie un meme aléatoire parmi une collection d'images enregistrée en local.
+Here is a list of the commands supported by Tobrie:
 
-La commande /info renvoie une information inutile sous forme de texte. Les informations inutiles sont obtenues par une requête sur le site https://www.savoir-inutile.com/
+`/meme`, `/info`, `/quote`, `/calc`, `/croa`
 
-La commande /quote renvoie une phrase générée aléatoirement depuis le site http://generateur.vuzi.fr/
+## Roadmap
 
-### Génération de fichiers son
-La commande /calc permet de convertir une opération sous frome textuelle en son en utilisant les voix de Dupont et Dupond (c'est une référence à un ytp Tintin). La fonctionnalité ne supporte que les chiffres et les opérations de base. Les caractères autorisés sont les suivants: 0123456789\+\-\*/cr. Example: /calc 1+2-8\*4/0r6c
+See the [ROADMAP.md](ROADMAP.md) or [open issues](https://github.com/dubicube/tobrie/issues) for a list of proposed features (and known issues).
 
-La commande /croa N renvoie un son contenant N fois "croa". Example: /croa 12
+## License
 
-## Données annexes nécessaires au fonctionnement
-
-...
-
-WIP
-
-## Description des fichiers
-### bot4.0.py
-C'est le fichier principal, à la racine de l'exécution. Il importe les fichiers auxiliaires, instancie les bots sur Telegram et Discord, définit les commandes et en implémente certaines.
-
-### contextual_bot.py
-Cette classe permet de généraliser les entrées/sorties du bot pour n'importe quelle API. On y retrouve une partie pour l'API Telegram, et une autre partie pour l'API Discord.
-
-### shared_core.py
-Cette classe permet de fournir un accès commun à des ressources partagées aux divers événements des bots. On y trouve notemment un système de log sur fichiers en local, ainsi qu'une redirection des événements vers une console.
-
-### audio.py
-Ce fichier permet d'effectuer diverses concaténations de fichiers audios.
-
-### auto_reply.py
-Ce fichier regroupe les fonctionnalités principales de réponses automatiques dans les chats vus par le bot. Ces réponses peuvent contenir du texte, des images, des vidéos, des fichiers son, des stickers...
-
-### config.py
-On trouve ici différentes constantes...
-
-### inventory.py
-Ce fichier fournit des fonctions pour lire l'inventaire du local sous forme de fichier html, ainsi que pour y effectuer des recherches.
-
-### web_texts.py
-Ici, un regroupement de diverses fonctions renvoyant des contenus sous forme de texte issus de divers sites internet.
+This program is not licensed yet.
